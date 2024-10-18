@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Centered Form</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margins */
+            padding: 20px; /* Add padding to avoid edges on small screens */
+            box-sizing: border-box; /* Include padding in the box model */
+        }
+
+        /* Form container styles */
+        .form-container {
+            background-color: #222; /* Dark grey background for form */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            width: 100%; /* Full width */
+            max-width: 400px; /* Max width to prevent it from being too large */
+            box-sizing: border-box; /* Include padding in width */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Form element styles */
+        input[type="text"], input[type="email"], input[type="password"], textarea {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin: 10px 0 20px 0; /* Margin between fields */
+            border: 2px solid #fff; /* White border */
+            background-color: transparent; /* Transparent background */
+            color: #fff; /* White text color */
+            border-radius: 5px; /* Rounded input fields */
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        /* Submit button styles */
+        input[type="submit"] {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff; /* White border */
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Full width for responsiveness */
+        }
+
+        /* Hover effect for submit button */
+        input[type="submit"]:hover {
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
+        }
+
+        /* Responsive behavior */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 15px; /* Reduce padding for small screens */
+                margin: 0 20px; /* Add side margins to prevent overflow */
+            }
+
+            input[type="submit"] {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Your password" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
