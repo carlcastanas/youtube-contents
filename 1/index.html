@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(20, 20, 20);
+            padding: 15px 20px;
+        }
+        .navbar .logo {
+            color: aliceblue;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li a {
+            color: aliceblue;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar ul li a:hover {
+            color: red;
+        }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 6px 0;
+        }
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGxhbmRpbmclMjBwYWdlfGVufDB8fHx8MTYwMzA0ODc0NA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 50px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            
+        }
+        .menu-icon {
+            display: block;
+        }
+        .navbar ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: rgb(20, 20, 20);
+            width: 100%;
+            padding: 20px;
+        }
+        .navbar.active ul {
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 10px 0;
+        }
+        .hero h1 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Mylogo</a>
+        <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div>
+            <h1>Welcome to my landing page</h1>
+            <p>Responsive Website</p>
+        </div>
+    </section>
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
